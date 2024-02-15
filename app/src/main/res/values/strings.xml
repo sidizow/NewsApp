@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="worldNews">World</string>
+    <string name="search">Search</string>
+    <string name="scienceNews">Science</string>
+    <string name="def_title">В мэрии рассказали, когда продлят метро в Екатеринбурге</string>
+    <string name="def_date">12:00 10.02.2024</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/science"
+    app:startDestination="@id/scienceNewsFragment">
+
+    <fragment
+        android:id="@+id/scienceNewsFragment"
+        android:name="com.example.newsapp.presentation.sience.ScienceNewsFragment"
+        android:label="fragment_science_news"
+        tools:layout="@layout/fragment_science_news" />
+</navigation>
