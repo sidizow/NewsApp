@@ -7,8 +7,10 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsapp.R
 import com.example.newsapp.databinding.FragmentSearchBinding
+import com.example.newsapp.presentation.TabsFragmentDirections
 import com.example.newsapp.presentation.base.BaseFragment
 import com.example.newsapp.utils.adapter.NewsAdapter
+import com.example.newsapp.utils.findTopNavController
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -37,13 +39,26 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(
                 return true
             }
         })
+
+        openNewsPage()
     }
 
     private fun setupNews(): NewsAdapter {
         binding.searchNewsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        val adapter = NewsAdapter()
+        val adapter = NewsAdapter(viewModel)
         binding.searchNewsRecyclerView.adapter = adapter
         return adapter
+    }
+
+    private fun openNewsPage(){
+        viewModel.openNewsPageEvent.observe(viewLifecycleOwner){
+            val newsArgs = it.get()
+            if (newsArgs != null) {
+                val direction =
+                    TabsFragmentDirections.actionTabsFragmentToCurrentNewsFragment(newsArgs)
+                findTopNavController().navigate(direction)
+            }
+        }
     }
 
 

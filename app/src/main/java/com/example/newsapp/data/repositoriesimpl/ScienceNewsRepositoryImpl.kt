@@ -4,6 +4,7 @@ import com.example.newsapp.data.datasources.sience.ScienceNewsSource
 import com.example.newsapp.domain.entities.NewsEntity
 import com.example.newsapp.domain.science.repositories.ScienceNewsRepository
 import com.example.newsapp.utils.toNewsEntity
+import com.example.newsapp.utils.validate
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -15,8 +16,6 @@ class ScienceNewsRepositoryImpl @Inject constructor(
     override suspend fun getScienceNews(): List<NewsEntity> {
         val listArticle = scienceNewsSource.getScienceNews().articles
 
-        return listArticle.filter {
-            it.title != null && it.description != null && it.imageUrl != null && it.publishedAt != null
-        }.map { it.toNewsEntity() }
+        return listArticle.filter { it.validate() }.map { it.toNewsEntity() }
     }
 }

@@ -6,4 +6,7 @@
     <string name="scienceNews">Science</string>
     <string name="def_title">В мэрии рассказали, когда продлят метро в Екатеринбурге</string>
     <string name="def_date">12:00 10.02.2024</string>
+    <string name="def_description">Сразу две новых станции метро появятся в Екатеринбурге. Такая радость ждет жителей Орджоникидзевского района, если верить утвержденной концепции развития Уралмаша и Эльмаша до 2030 года.\n\nВ документе указано, что новые станции хотят построить в районе пересечения проспекта Космонавтов с Шефской, а также Космонавтов и улицы Березовой. Тут же планируют построить и новый автовокзал.</string>
+    <string name="url">https://www.hindustantimes.com/world-news/us-news/great-patriots-trump-reacts-to-truckers-refusing-shipment-to-new-york-after-355mn-fraud-ruling-101708343409222.html</string>
+    <string name="url_field">Читать полностью:</string>
 </resources>

@@ -3,9 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_host"
-    app:startDestination="@id/world">
-
-    <include app:graph="@navigation/world" />
-    <include app:graph="@navigation/search" />
-    <include app:graph="@navigation/science" />
+    app:startDestination="@id/tabsFragment">
+    <fragment
+        android:id="@+id/tabsFragment"
+        android:name="com.example.newsapp.presentation.TabsFragment"
+        android:label="fragment_tabs"
+        tools:layout="@layout/fragment_tabs" >
+        <action
+            android:id="@+id/action_tabsFragment_to_currentNewsFragment"
+            app:destination="@id/currentNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentNewsFragment"
+        android:name="com.example.newsapp.presentation.currentnews.CurrentNewsFragment"
+        android:label="fragment_current_news"
+        tools:layout="@layout/fragment_current_news" >
+        <argument
+            android:name="title"
+            app:argType="string[]" />
+    </fragment>
 </navigation>

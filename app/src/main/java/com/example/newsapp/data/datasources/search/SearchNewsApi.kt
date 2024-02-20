@@ -9,8 +9,7 @@ interface SearchNewsApi {
     @GET("everything")
     suspend fun getSearchNews(
         @Query("q") q: String,
-        @Query("sortBy") sortBy: String,
-        @Query("apiKey") apiKey: String,
+        @Query("sortBy") sortBy: String
     ): NewsResponseSourceEntity
 
 }

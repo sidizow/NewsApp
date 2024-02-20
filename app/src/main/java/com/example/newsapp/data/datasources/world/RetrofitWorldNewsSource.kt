@@ -1,6 +1,5 @@
-package com.example.newsapp.data.datasources.worldnews
+package com.example.newsapp.data.datasources.world
 
-import com.example.newsapp.data.datasources.base.ApiKey
 import com.example.newsapp.data.datasources.base.BaseRetrofitSource
 import com.example.newsapp.data.datasources.base.Const
 import com.example.newsapp.data.datasources.base.RetrofitConfig
@@ -11,14 +10,12 @@ import javax.inject.Singleton
 @Singleton
 class RetrofitWorldNewsSource @Inject constructor(
     config: RetrofitConfig,
+    private val worldNewsApi: WorldNewsApi
 ) : BaseRetrofitSource(config), WorldNewsSource {
-
-    private val worldNewsApi = retrofit.create(WorldNewsApi::class.java)
 
     override suspend fun getWorldNews(): NewsResponseSourceEntity = wrapRetrofitExceptions {
             worldNewsApi.getWorldNews(
-                country = Const.US,
-                apiKey = ApiKey.KEY
+                country = Const.US
             )
         }
 }

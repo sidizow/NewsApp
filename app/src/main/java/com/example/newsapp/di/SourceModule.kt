@@ -4,8 +4,8 @@ import com.example.newsapp.data.datasources.search.RetrofitSearchNewsSource
 import com.example.newsapp.data.datasources.search.SearchNewsSource
 import com.example.newsapp.data.datasources.sience.RetrofitScienceNewsSource
 import com.example.newsapp.data.datasources.sience.ScienceNewsSource
-import com.example.newsapp.data.datasources.worldnews.RetrofitWorldNewsSource
-import com.example.newsapp.data.datasources.worldnews.WorldNewsSource
+import com.example.newsapp.data.datasources.world.RetrofitWorldNewsSource
+import com.example.newsapp.data.datasources.world.WorldNewsSource
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

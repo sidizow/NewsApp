@@ -1,4 +1,4 @@
-package com.example.newsapp.data.datasources.worldnews
+package com.example.newsapp.data.datasources.world
 
 import com.example.newsapp.data.datasources.entities.NewsResponseSourceEntity
 import retrofit2.http.GET
@@ -8,8 +8,7 @@ interface WorldNewsApi {
 
     @GET("top-headlines")
     suspend fun getWorldNews(
-        @Query("country") country: String,
-        @Query("apiKey") apiKey: String
+        @Query("country") country: String
     ): NewsResponseSourceEntity
 
 }

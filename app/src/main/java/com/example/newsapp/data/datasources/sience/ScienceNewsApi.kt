@@ -9,8 +9,7 @@ interface ScienceNewsApi {
     @GET("top-headlines")
     suspend fun getScienceNews(
         @Query("country") country: String,
-        @Query("category") category: String,
-        @Query("apiKey") apiKey: String
+        @Query("category") category: String
     ): NewsResponseSourceEntity
 
 }

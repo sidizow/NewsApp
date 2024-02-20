@@ -1,4 +1,4 @@
-package com.example.newsapp.data.datasources.worldnews
+package com.example.newsapp.data.datasources.world
 
 import com.example.newsapp.data.datasources.entities.NewsResponseSourceEntity
 

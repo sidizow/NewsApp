@@ -1,6 +1,10 @@
 package com.example.newsapp.di
 
+import com.example.newsapp.data.datasources.base.ApiKey
 import com.example.newsapp.data.datasources.base.Const
+import com.example.newsapp.data.datasources.search.SearchNewsApi
+import com.example.newsapp.data.datasources.sience.ScienceNewsApi
+import com.example.newsapp.data.datasources.world.WorldNewsApi
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -26,7 +30,10 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideClient(): OkHttpClient {
-        return OkHttpClient.Builder().addInterceptor(createLoggingInterceptor()).build()
+        return OkHttpClient.Builder()
+            .addInterceptor(createLoggingInterceptor())
+            .addInterceptor(createApiKeyInterceptor())
+            .build()
     }
 
     @Provides
@@ -39,9 +46,37 @@ class NetworkModule {
             .build()
     }
 
+    @Provides
+    @Singleton
+    fun provideSearchNewsApi(retrofit: Retrofit): SearchNewsApi{
+        return retrofit.create(SearchNewsApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideScienceNewsApi(retrofit: Retrofit): ScienceNewsApi{
+        return retrofit.create(ScienceNewsApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideWorldNewsApi(retrofit: Retrofit): WorldNewsApi {
+        return retrofit.create(WorldNewsApi::class.java)
+    }
+
+    private fun createApiKeyInterceptor(): Interceptor {
+        return Interceptor { chain ->
+            val request = chain.request().newBuilder()
+                .addHeader("Authorization", ApiKey.KEY).build()
+            return@Interceptor chain.proceed(request = request)
+            }
+    }
+
     private fun createLoggingInterceptor(): Interceptor {
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
+
+
 
 
 }
