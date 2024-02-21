@@ -21,6 +21,8 @@ dependencyResolutionManagement {
             version("hilt","2.50")
             version("okhttp","4.12.0")
             version("retrofit2","2.9.0")
+            version("glide","4.16.0")
+            version("paging","3.2.1")
 
             library("androidx.core", "androidx.core:core-ktx:1.12.0")
             library("androidx.appcompat", "com.google.android.material:material:1.11.0")
@@ -29,7 +31,6 @@ dependencyResolutionManagement {
             library("junit", "junit:junit:4.13.2")
             library("androidx.test.ext", "androidx.test.ext:junit:1.1.5")
             library("androidx.test.espresso", "androidx.test.espresso:espresso-core:3.5.1")
-            version("glide","4.16.0")
 
             library("coroutines", "org.jetbrains.kotlinx","kotlinx-coroutines-android").versionRef("coroutines")
             library("androidx.activity", "androidx.activity","activity-ktx").versionRef("androidx.activity")
@@ -44,6 +45,8 @@ dependencyResolutionManagement {
             library("retrofit2", "com.squareup.retrofit2","retrofit").versionRef("retrofit2")
             library("moshi", "com.squareup.retrofit2","converter-moshi").versionRef("retrofit2")
             library("glide", "com.github.bumptech.glide","glide").versionRef("glide")
+            library("paging", "androidx.paging","paging-runtime").versionRef("paging")
+
 
             bundle("activity.fragment", listOf("androidx.fragment","androidx.activity"))
             bundle("navigation", listOf("androidx.navigation.fragment","androidx.navigation.ui"))

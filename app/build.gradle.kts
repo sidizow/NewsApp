@@ -64,4 +64,5 @@ dependencies {
     implementation(libs.bundles.okhttp3)
     implementation(libs.bundles.retrofit2)
     implementation(libs.glide)
+    implementation(libs.paging)
 }

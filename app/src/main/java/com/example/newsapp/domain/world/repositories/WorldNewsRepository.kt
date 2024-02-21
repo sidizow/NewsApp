@@ -1,9 +1,9 @@
 package com.example.newsapp.domain.world.repositories
 
-import com.example.newsapp.domain.entities.NewsEntity
+import com.example.newsapp.domain.entities.DataItem
 
 interface WorldNewsRepository {
 
-    suspend fun getWorldNews(): List<NewsEntity>
+    suspend fun getWorldNews(): List<DataItem>
 
 }

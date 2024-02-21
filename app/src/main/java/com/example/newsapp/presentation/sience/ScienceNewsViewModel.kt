@@ -3,7 +3,7 @@ package com.example.newsapp.presentation.sience
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.newsapp.domain.entities.NewsEntity
+import com.example.newsapp.domain.entities.DataItem
 import com.example.newsapp.domain.science.usecases.GetScienceNewsUseCase
 import com.example.newsapp.utils.MutableLiveEvent
 import com.example.newsapp.utils.adapter.NewsAdapter
@@ -20,7 +20,7 @@ class ScienceNewsViewModel @Inject constructor(
     private val getScienceNewsUseCase: GetScienceNewsUseCase,
 ) : ViewModel(), NewsAdapter.ActionListener {
 
-    private val _scienceNews = MutableLiveData<List<NewsEntity>>()
+    private val _scienceNews = MutableLiveData<List<DataItem>>()
     val scienceNews = _scienceNews.share()
 
     private val _openNewsPageEvent = MutableLiveEvent<Array<String>>()

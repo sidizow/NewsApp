@@ -25,7 +25,7 @@ class CurrentNewsFragment : BaseFragment<FragmentCurrentNewsBinding>(
             binding.urlTextView.text = it[4]
             Glide.with(binding.imageView.context)
                 .load(it[2])
-                .placeholder(R.drawable.hide_image)
+                .placeholder(R.drawable.ic_load)
                 .error(R.drawable.hide_image)
                 .into(binding.imageView)
         }

@@ -6,11 +6,11 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.newsapp.R
 import com.example.newsapp.data.datasources.entities.Article
-import com.example.newsapp.domain.entities.NewsEntity
+import com.example.newsapp.domain.entities.DataItem
 
 
-fun Article.toNewsEntity(): NewsEntity {
-    return NewsEntity(
+fun Article.toNewsEntity(): DataItem.NewsEntity {
+    return DataItem.NewsEntity(
         title = title!!,
         content = content!!,
         imageUrl = imageUrl!!,
@@ -19,7 +19,7 @@ fun Article.toNewsEntity(): NewsEntity {
     )
 }
 
-fun Article.validate(): Boolean =
+fun Article.notNull(): Boolean =
     title != null && content != null && imageUrl != null && publishedAt != null && url != null
 
 fun Fragment.findTopNavController(): NavController {
