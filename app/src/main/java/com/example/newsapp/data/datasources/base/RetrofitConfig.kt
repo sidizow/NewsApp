@@ -9,5 +9,4 @@ import javax.inject.Singleton
 class RetrofitConfig @Inject constructor(
     val retrofit: Retrofit,
     val moshi: Moshi
-) {
-}
+)

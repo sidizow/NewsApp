@@ -20,17 +20,3 @@ open class BackendException(
 class ParseBackendResponseException(
     cause: Throwable
 ) : AppException(cause = cause)
-
-// ---
-
-internal inline fun <T> wrapBackendExceptions(block: () -> T): T {
-    try {
-        return block.invoke()
-    } catch (e: BackendException) {
-        if (e.code == 401) {
-            throw ApiKeyException(e)
-        } else {
-            throw e
-        }
-    }
-}

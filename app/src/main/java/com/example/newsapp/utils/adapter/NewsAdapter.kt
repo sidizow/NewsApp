@@ -19,7 +19,7 @@ class NewsAdapter(
 
     private var listNews: List<DataItem> = emptyList()
 
-    class NewsViewHolder(val binding: ItemNewsBinding) : ViewHolder(binding.root) {
+    class NewsViewHolder(private val binding: ItemNewsBinding) : ViewHolder(binding.root) {
         fun bind(newsEntity: DataItem.NewsEntity) {
             with(binding) {
                 titleTextView.text = newsEntity.title
@@ -37,7 +37,7 @@ class NewsAdapter(
         }
     }
 
-    class HeaderViewHolder(val binding: ItemHeaderBinding) : ViewHolder(binding.root) {
+    class HeaderViewHolder(private val binding: ItemHeaderBinding) : ViewHolder(binding.root) {
         fun bind(header: DataItem.Header) {
             with(binding) {
                 if (header.imageUrl.isNotBlank()) {

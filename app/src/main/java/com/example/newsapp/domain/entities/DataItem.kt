@@ -1,6 +1,6 @@
 package com.example.newsapp.domain.entities
 
-sealed class DataItem {
+sealed class DataItem{
     data class NewsEntity(
         val title: String,
         val content: String,
